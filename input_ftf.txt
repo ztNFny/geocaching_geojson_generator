@@ -1,0 +1,2 @@
+1	2020-00-00	Germany Hessen / Berlin	GC0815	Traditional Cache	Tradihausen
+2	2020-00-00	Germany Hessen / Hamburg	GC4711	Traditional Cache	Noch nen Tradi

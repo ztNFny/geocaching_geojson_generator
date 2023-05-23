@@ -1,14 +1,10 @@
 #!/usr/bin/python3
 import json
 import csv
-import requests
 import re
 
 basefolder = './'
-
-inputFileName = 'input_mapcounties.txt'
-#inputFileName = 'input_t5.txt'
-inputIsT5 = False
+inputFileName = 'input.txt'
 
 with open(basefolder+'landkreise_simplify200.geojson', newline='', encoding='utf-8') as f:
 	js = json.load(f)
@@ -23,13 +19,35 @@ with open(basefolder+'mapping.csv', newline='', encoding='utf-8') as f:
 	for row in reader:
 		counties[row[1] + '_' + row[2]] = row[0]
 
-if inputIsT5:
+inputType = ''
+
+with open(basefolder+inputFileName, newline='', encoding='utf-8') as f:
+	firstline = f.readline()
+	if re.match('^[\d\t-]*Germany [^/]+ / ([^\t]+)\tGC', firstline):
+		inputType = 'FTF'
+	elif re.match('^[^/]+ / (.+) - D\d\.\d/T\d\.\d', firstline):
+		inputType = 'T5'
+	elif re.match('^[^\t]*\t\d*\t[^\t]*\t\d*\t[^\t]*\t\d*\t[^\t]*\t\d*$', firstline):
+		inputType = 'MapCounties'
+	else:
+		print("Unrecognized input format")
+		exit(1)
+
+if inputType == 'FTF':
+	# Parse output of https://project-gc.com/Statistics/ProfileStats#FTF
+	with open(basefolder+inputFileName, newline='', encoding='utf-8') as f:
+		while line := f.readline():
+			z = re.match('^[\d\t-]*Germany [^/]+ / ([^\t]+)\tGC', line)
+			if z:
+				lkname = z.group(1)
+				foundCounties.append(z.group(1))
+elif inputType == 'T5':
 	# Parse output of https://project-gc.com/Challenges/GCA0QAH/71987
 	with open(basefolder+inputFileName, newline='', encoding='utf-8') as f:
 		while line := f.readline():
 			lkname = re.match('^[^/]+ / (.+) - D\d\.\d/T\d\.\d', line).group(1)
 			foundCounties.append(lkname)
-else:
+elif inputType == 'MapCounties':
 	# Parse output of https://project-gc.com/Tools/MapCounties?country=Germany&submit=Filter
 	with open(basefolder+inputFileName, newline='', encoding='utf-8') as f:
 		reader = csv.reader(f, delimiter='\t')
