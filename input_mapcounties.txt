@@ -1,0 +1,100 @@
+Ahrweiler (Lkr)	8	Frankfurt (Oder)	1	Magdeburg	22	Rosenheim	0
+Aichach-Friedberg (Lkr)	0	Frankfurt am Main	36	Main-Kinzig-Kreis	1	Rosenheim (Lkr)	2
+Alb-Donau-Kreis	0	Freiburg im Breisgau	0	Main-Spessart (Lkr)	7	Rostock	0
+Altenburger Land	0	Freising (Lkr)	3	Main-Tauber-Kreis	2	Rostock (Lkr)	0
+Altenkirchen (Lkr)	0	Freudenstadt (Lkr)	0	Main-Taunus-Kreis	19	Rotenburg (Wümme) (Lkr)	0
+Altmarkkreis Salzwedel	0	Freyung-Grafenau (Lkr)	0	Mainz	9	Roth (Lkr)	0
+Altötting (Lkr)	0	Friesland (Lkr)	0	Mainz-Bingen (Lkr)	1	Rottal-Inn (Lkr)	0
+Alzey-Worms (Lkr)	0	Fulda (Lkr)	0	Mannheim	1	Rottweil (Lkr)	0
+Amberg	0	Fürstenfeldbruck (Lkr)	0	Mansfeld-Südharz	0	Saale-Holzland-Kreis	0
+Amberg-Sulzbach (Lkr)	0	Fürth	0	Marburg-Biedenkopf (Lkr)	0	Saale-Orla-Kreis	0
+Ammerland (Lkr)	8	Fürth (Lkr)	0	Mayen-Koblenz (Lkr)	31	Saalekreis	1
+Anhalt-Bitterfeld	2	Garmisch-Partenkirchen (Lkr)	0	Mecklenburgische Seenplatte	0	Saalfeld-Rudolstadt (Lkr)	0
+Ansbach	0	Gelsenkirchen	40	Meißen	0	Saarlouis (Lkr)	0
+Ansbach (Lkr)	0	Gera	0	Memmingen	0	Saarpfalz-Kreis	0
+Aschaffenburg	5	Germersheim (Lkr)	0	Merzig-Wadern (Lkr)	25	Salzgitter	2
+Aschaffenburg (Lkr)	4	Gießen (Lkr)	1	Mettmann (Kr)	1212	Salzlandkreis	0
+Augsburg	0	Gifhorn	0	Miesbach (Lkr)	2	Schaumburg (Lkr)	0
+Augsburg (Lkr)	0	Goslar (Lkr)	0	Miltenberg (Lkr)	9	Schleswig-Flensburg	0
+Aurich (Lkr)	0	Gotha (Lkr)	1	Minden-Lübbecke (Kr)	19	Schmalkalden-Meiningen (Lkr)	2
+Bad Dürkheim (Lkr)	0	Grafschaft Bentheim (Lkr)	1	Mittelsachsen	0	Schwabach	0
+Bad Kissingen (Lkr)	0	Greiz	0	Märkisch-Oderland	3	Schwalm-Eder-Kreis	0
+Bad Kreuznach (Lkr)	0	Groß-Gerau (Kr)	5	Märkischer Kreis	35	Schwandorf (Lkr)	0
+Bad Tölz-Wolfratshausen (Lkr)	0	Göppingen (Lkr)	0	Mönchengladbach	36	Schwarzwald-Baar-Kreis	1
+Baden-Baden	0	Görlitz	0	Mühldorf am Inn (Lkr)	0	Schweinfurt	2
+Bamberg	6	Göttingen (Lkr)	0	Mülheim an der Ruhr	78	Schweinfurt (Lkr)	2
+Bamberg (Lkr)	1	Günzburg (Lkr)	0	München	68	Schwerin	3
+Barnim	0	Gütersloh (Kr)	17	München (Lkr)	3	Schwäbisch Hall (Lkr)	0
+Bautzen	0	Hagen	19	Münster	11	Segeberg	0
+Bayreuth	0	Halle (Saale)	6	Neckar-Odenwald-Kreis	0	Siegen-Wittgenstein (Kr)	5
+Bayreuth (Lkr)	0	Hamburg	47	Neu-Ulm (Lkr)	0	Sigmaringen (Lkr)	0
+Berchtesgadener Land (Lkr)	9	Hameln-Pyrmont (Lkr)	21	Neuburg-Schrobenhausen (Lkr)	0	Soest (Kr)	7
+Bergstraße (Kr)	30	Hamm	20	Neumarkt in der Oberpfalz (Lkr)	0	Solingen	25
+Berlin	82	Harburg	0	Neumünster	0	Sonneberg (Lkr)	0
+Bernkastel-Wittlich (Lkr)	29	Harz (Lkr)	0	Neunkirchen (Lkr)	0	Speyer	0
+Biberach (Lkr)	0	Havelland	0	Neustadt an der Aisch-Bad Windsheim (Lkr)	0	Spree-Neiße	0
+Bielefeld	11	Haßberge (Lkr)	13	Neustadt an der Waldnaab (Lkr)	0	St. Wendel (Lkr)	0
+Birkenfeld (Lkr)	0	Heidekreis	0	Neustadt an der Weinstraße	0	Stade	0
+Bochum	61	Heidelberg	8	Neuwied (Lkr)	5	Starnberg (Lkr)	0
+Bodenseekreis	0	Heidenheim (Lkr)	0	Nienburg/Weser (Lkr)	0	Steinburg	0
+Bonn	3	Heilbronn	0	Nordfriesland	0	Steinfurt (Kr)	0
+Borken (Kr)	167	Heilbronn (Lkr)	0	Nordhausen (Lkr)	0	Stendal	0
+Bottrop	53	Heinsberg (Kr)	1	Nordsachsen	1	Stormarn	3
+Brandenburg an der Havel	3	Helmstedt (Lkr)	4	Nordwestmecklenburg	5	Straubing	0
+Braunschweig	6	Herford (Kr)	2	Northeim (Lkr)	0	Straubing-Bogen (Lkr)	0
+Breisgau-Hochschwarzwald (Lkr)	0	Herne	4	Nürnberg	8	Stuttgart	11
+Bremen	12	Hersfeld-Rotenburg (Lkr)	0	Nürnberger Land (Lkr)	0	Städteregion Aachen	21
+Bremerhaven	13	Herzogtum Lauenburg	0	Oberallgäu (Lkr)	0	Suhl	0
+Burgenlandkreis	0	Hildburghausen (Lkr)	0	Oberbergischer Kreis	83	Sächsische Schweiz-Osterzgebirge	0
+Böblingen (Lkr)	3	Hildesheim (Lkr)	16	Oberhausen	28	Sömmerda (Lkr)	0
+Börde	20	Hochsauerlandkreis	66	Oberhavel	0	Südliche Weinstraße (Lkr)	0
+Calw (Lkr)	0	Hochtaunuskreis	16	Oberspreewald-Lausitz	0	Südwestpfalz	0
+Celle (Lkr)	3	Hof	0	Odenwaldkreis	0	Teltow-Fläming	1
+Cham (Lkr)	0	Hof (Lkr)	0	Oder-Spree	0	Tirschenreuth (Lkr)	0
+Chemnitz	0	Hohenlohekreis	0	Offenbach (Lkr)	28	Traunstein (Lkr)	0
+Cloppenburg (Lkr)	37	Holzminden (Lkr)	0	Offenbach am Main	0	Trier	3
+Coburg	0	Höxter (Kr)	5	Oldenburg	1	Trier-Saarburg (Lkr)	5
+Coburg (Lkr)	0	Ilm-Kreis	4	Oldenburg (Lkr)	0	Tuttlingen (Lkr)	0
+Cochem-Zell (Lkr)	9	Ingolstadt	2	Olpe (Kr)	10	Tübingen (Lkr)	3
+Coesfeld (Kr)	87	Jena	0	Ortenaukreis	1	Uckermark	0
+Cottbus	0	Jerichower Land	18	Osnabrück	1	Uelzen	0
+Cuxhaven (Lkr)	5	Kaiserslautern	0	Osnabrück (Lkr)	3	Ulm	0
+Dachau (Lkr)	0	Kaiserslautern (Lkr)	0	Ostalbkreis	0	Unna (Kr)	118
+Dahme-Spreewald	33	Karlsruhe	1	Ostallgäu (Lkr)	0	Unstrut-Hainich-Kreis	0
+Darmstadt	0	Karlsruhe (Lkr)	1	Osterholz (Lkr)	3	Unterallgäu (Lkr)	0
+Darmstadt-Dieburg (Lkr)	3	Kassel	12	Ostholstein	6	Vechta (Lkr)	6
+Deggendorf (Lkr)	0	Kassel (Lkr)	6	Ostprignitz-Ruppin	0	Verden (Lkr)	0
+Delmenhorst	0	Kaufbeuren	0	Paderborn (Kr)	12	Viersen (Kr)	44
+Dessau-Roßlau	0	Kelheim (Lkr)	0	Passau	6	Vogelsbergkreis	0
+Diepholz (Lkr)	1	Kempten (Allgäu)	0	Passau (Lkr)	1	Vogtlandkreis	0
+Dillingen an der Donau (Lkr)	0	Kiel	2	Peine (Lkr)	2	Vorpommern-Greifswald	3
+Dingolfing-Landau (Lkr)	0	Kitzingen (Lkr)	12	Pfaffenhofen an der Ilm (Lkr)	0	Vorpommern-Rügen	0
+Dithmarschen	0	Kleve (Kr)	49	Pforzheim	2	Vulkaneifel (Lkr)	16
+Donau-Ries (Lkr)	0	Koblenz	19	Pinneberg	1	Waldeck-Frankenberg (Lkr)	80
+Donnersbergkreis	0	Konstanz (Lkr)	0	Pirmasens	0	Waldshut (Lkr)	0
+Dortmund	24	Krefeld	16	Plön	24	Warendorf (Kr)	18
+Dresden	7	Kronach (Lkr)	0	Potsdam	5	Wartburgkreis	3
+Duisburg	101	Kulmbach (Lkr)	0	Potsdam-Mittelmark	16	Weiden in der Oberpfalz	0
+Düren (Kr)	33	Kusel (Lkr)	0	Prignitz	0	Weilheim-Schongau (Lkr)	0
+Düsseldorf	260	Kyffhäuserkreis	0	Rastatt (Lkr)	0	Weimar	8
+Ebersberg (Lkr)	0	Köln	61	Ravensburg (Lkr)	0	Weimarer Land (Lkr)	1
+Eichsfeld (Lkr)	0	Lahn-Dill-Kreis	19	Recklinghausen (Kr)	138	Weißenburg-Gunzenhausen (Lkr)	0
+Eichstätt (Lkr)	0	Landau in der Pfalz	0	Regen (Lkr)	0	Werra-Meißner-Kreis	4
+Eifelkreis Bitburg-Prüm	1	Landsberg am Lech (Lkr)	0	Regensburg	6	Wesel (Kr)	43
+Elbe-Elster	0	Landshut	0	Regensburg (Lkr)	0	Wesermarsch (Lkr)	0
+Emden	0	Landshut (Lkr)	0	Region Hannover	58	Westerwaldkreis	7
+Emmendingen (Lkr)	0	Leer (Lkr)	2	Regionalverband Saarbrücken	14	Wetteraukreis	2
+Emsland (Lkr)	59	Leipzig	17	Rems-Murr-Kreis	0	Wiesbaden	58
+Ennepe-Ruhr-Kreis	207	Leipzig (Lkr)	0	Remscheid	4	Wilhelmshaven	0
+Enzkreis	2	Leverkusen	2	Rendsburg-Eckernförde	0	Wittenberg	0
+Erding (Lkr)	1	Lichtenfels (Lkr)	0	Reutlingen (Lkr)	0	Wittmund (Lkr)	1
+Erfurt	7	Limburg-Weilburg (Lkr)	15	Rhein-Erft-Kreis	55	Wolfenbüttel (Lkr)	2
+Erlangen	0	Lindau (Lkr)	0	Rhein-Hunsrück-Kreis	14	Wolfsburg	0
+Erlangen-Höchstadt (Lkr)	0	Lippe (Kr)	16	Rhein-Kreis Neuss	33	Worms	4
+Erzgebirgskreis	0	Ludwigsburg (Lkr)	0	Rhein-Lahn-Kreis	1	Wunsiedel im Fichtelgebirge (Lkr)	0
+Essen	405	Ludwigshafen am Rhein	0	Rhein-Neckar-Kreis	18	Wuppertal	123
+Esslingen (Lkr)	13	Ludwigslust-Parchim	2	Rhein-Pfalz-Kreis	0	Würzburg	2
+Euskirchen (Kr)	54	Lörrach (Lkr)	0	Rhein-Sieg-Kreis	16	Würzburg (Lkr)	6
+Flensburg	0	Lübeck	8	Rheingau-Taunus-Kreis	3	Zollernalbkreis	0
+Forchheim (Lkr)	0	Lüchow-Dannenberg	0	Rheinisch-Bergischer Kreis	6	Zweibrücken	0
+Frankenthal (Pfalz)	0	Lüneburg	0	Rhön-Grabfeld (Lkr)	0	Zwickau	0
