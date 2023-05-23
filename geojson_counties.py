@@ -86,10 +86,10 @@ for county in features:
 
 # Write Founds file
 newjson['features'] = found
-with open(basefolder + 'counties' + '_found' + '.geojson', 'w', encoding='utf-8') as f:
+with open(basefolder + 'stats' + '_' + inputType + '_' + 'found' + '.geojson', 'w', encoding='utf-8') as f:
 	json.dump(newjson, f)
 
 # Write Missing file
 newjson['features'] = notFound
-with open(basefolder + 'counties' + '_missing' + '.geojson', 'w', encoding='utf-8') as f:
+with open(basefolder + 'stats' + '_' + inputType + '_' + 'missing' + '.geojson', 'w', encoding='utf-8') as f:
 	json.dump(newjson, f)
