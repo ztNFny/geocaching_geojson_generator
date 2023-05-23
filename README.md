@@ -11,3 +11,6 @@ Supported data sources for the visited counties:
 - Clone repo
 - Put content from one of the 3 mentioned sources as *input.txt*
 - Run *python geojson_counties.py*
+
+## Limitations:
+- Works for GERMANY only! Other countries need matching *mapping.csv* and *landkreise_simplify200.geojson* files
