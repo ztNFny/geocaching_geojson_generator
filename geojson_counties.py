@@ -27,6 +27,8 @@ with open(basefolder+inputFileName, newline='', encoding='utf-8') as f:
 		inputType = 'FTF'
 	elif re.match('^[^/]+ / (.+) - D\d\.\d/T\d\.\d', firstline):
 		inputType = 'T5'
+	elif re.match('^[\d/]+\tGermany\t[^\t]+\t([^\t]+)\t\d*\.gif', firstline):
+		inputType = 'Counties'
 	elif re.match('^[^\t]*\t\d*\t[^\t]*\t\d*\t[^\t]*\t\d*\t[^\t]*\t\d*$', firstline):
 		inputType = 'MapCounties'
 	else:
@@ -46,6 +48,12 @@ elif inputType == 'T5':
 	with open(basefolder+inputFileName, newline='', encoding='utf-8') as f:
 		while line := f.readline():
 			lkname = re.match('^[^/]+ / (.+) - D\d\.\d/T\d\.\d', line).group(1)
+			foundCounties.append(lkname)
+elif inputType == 'Counties':
+	# Parse output of https://project-gc.com/Challenges/GC90TVE/56012
+	with open(basefolder+inputFileName, newline='', encoding='utf-8') as f:
+		while line := f.readline():
+			lkname = re.match('^[\d/]+\tGermany\t[^\t]+\t([^\t]+)\t\d*\.gif', line).group(1)
 			foundCounties.append(lkname)
 elif inputType == 'MapCounties':
 	# Parse output of https://project-gc.com/Tools/MapCounties?country=Germany&submit=Filter
