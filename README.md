@@ -14,3 +14,7 @@ Supported data sources for the visited counties:
 
 ## Limitations:
 - Works for GERMANY only! Other countries need matching *mapping.csv* and *landkreise_simplify200.geojson* files
+
+# Get GeoJSON from Project-GC
+
+*generateGeoJsonFromPGC.py* can be used to generate a GeoJSON file with the shapes used by Project-GC. To use this run https://project-gc.com/Tools/MapRegions or https://project-gc.com/Tools/MapCounties for the country of your choice, save the html returned and provide it to *generateGeoJsonFromPGC.py* as input.
