@@ -4,12 +4,16 @@ import tempfile
 
 basefolder = './'
 inputFileName = 'input.html'
-country = 'Luxembourg' # used for output filename and PGC
+country = 'Belgium' # used for output filename and PGC
 level = 'regions' # used for output filename and PGC
-level = 'counties' # used for output filename and PGC
+#level = 'counties' # used for output filename and PGC
 
-sourceType = 'PGC'
-#sourceType = 'file'
+#includeInOutput='all'
+includeInOutput='found'
+includeInOutput='missing'
+
+#sourceType = 'PGC'
+sourceType = 'file'
 pgcUsername = 'test'
 
 if sourceType == 'PGC':
@@ -21,7 +25,7 @@ def main():
 	else:
 		inFile = basefolder + '/' + inputFileName
 	print(inFile)
-	createGeoJson(inFile, basefolder + '/' +country + '_' + level + '.geojson')
+	createGeoJson(inFile, basefolder + '/' +country + '_' + level + '_' + includeInOutput + '.geojson')
 
 def getPGCGeoJson(username: str, country: str, isRegions: bool):
 	if isRegions:
@@ -45,8 +49,14 @@ def createGeoJson(inputFile: str, outputFile: str):
 			z = re.match('.*new L\.geoJson\(JSON.parse\(\'(.*)\'\), \{', line)
 			if z:
 				geojson = z.group(1)
-			z = re.match('.*polygon.bindPopup.*submit=Filter&(county|region)=([^"]*)">.*', line)
+			z = re.match('.*polygon.bindPopup.*submit=Filter&(county|region)=([^"]*)">(\d*) finds in.*', line)
 			if z:
+				finds = int(z.group(3))
+				if includeInOutput == 'found' and finds == 0:
+					continue
+				elif includeInOutput == 'missing' and finds != 0:
+					continue
+
 				regionName = z.group(2)
 				if not isFirst:
 					out += ','
