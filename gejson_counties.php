@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_POST['input'])) {
 	generate();
 } else {
@@ -13,43 +12,34 @@ print "<html>
 </head>
 <body>
 <p>Generate GeoJson files for (not) found counties for GERMANY ONLY!</p>
+<form method='POST' action=''>
+<h2>County info</h2>
+<h3>Data Sources</h3>
+<ul>
+<li><a href='https://project-gc.com/Challenges/GC90TVE/56012'>Counties</a></li>
+<li><a href='https://project-gc.com/Tools/MapCounties?country=Germany'>Counties (alternative)</a></li>
+</ul>
+<p>Input from Project-GC. Paste ONLY lines containing the actual county information, NO HEADINGS!</p>
+<p><textarea name='input' rows='10' cols='150'></textarea></p>
+<h2>Additional info (T5 OR FTF)</h2>
 <h3>Data Sources</h3>
 <ul>
 <li><a href='https://project-gc.com/Statistics/ProfileStats#FTF'>FTF</a></li>
 <li><a href='https://project-gc.com/Challenges/GCA0QAH/71987'>T5</a></li>
-<li><a href='https://project-gc.com/Challenges/GC90TVE/56012'>Counties</a> / <a href='https://project-gc.com/Tools/MapCounties?country=Germany'>Counties (alternative)</a></li>
 </ul>
-<form method='POST' action=''>
-<p>Generate GeoJson for Counties ...<br/>
-<input type='radio' name='type' id='type_found' value='found' checked='checked' /><label for='type_found'>Found</label>
-<input type='radio' name='type' id='type_notfound' value='notfound' /><label for='type_notfound'>Not Found</label>
-</p>
 <p>Input from Project-GC. Paste ONLY lines containing the actual county information, NO HEADINGS!</p>
-<p><textarea name='input' rows='20' cols='150'></textarea></p>
+<p><textarea name='input2' rows='10' cols='150'></textarea></p>
+<h2>Colors</h2>
+<p><label for='color_found'>Found:</label> <input type='color' name='color_found' id='color_found' value='#116611' /></p>
+<p><label for='color_notfound'>Not found:</label> <input type='color' name='color_notfound' id='color_notfound' value='#ff3333' /></p>
+<p><label for='color_special'>FTF / T5:</label> <input type='color' name='color_special' id='color_special' value='#3333ff' /></p>
 <p><input type='submit' /></p>
 </form>
 </body>
 </html>";
 }
 
-function generate() {
-	$basefolder = '';
-	$lk_js = json_decode(file_get_contents($basefolder.'landkreise_simplify200.geojson'), true);
-
-	$counties = [];
-	$foundCounties = [];
-	$missingCounties = [];
-
-	if (($fh = fopen($basefolder.'mapping.csv', "r")) !== FALSE) {
-		while(($data = fgetcsv($fh, 1000, "\t")) !== FALSE) {
-			$counties[$data[1].'_'.$data[2]] = $data[0];
-		}
-		fclose($fh);
-	}
-
-	$input = preg_split('/\r\n|[\r\n]/', $_POST['input']);
-	
-	$firstline = $input[0];
+function identifySource($firstline) {
 	if (preg_match('/^[\d\t-]*Germany [^\/]+ \/ ([^\t]+)\tGC/', $firstline))
 		$inputType = 'FTF';
 	else if (preg_match('/^[^\/]+ \/ (.+) - D\d\.\d\/T\d\.\d/', $firstline))
@@ -59,10 +49,14 @@ function generate() {
 	else if (preg_match('/^[^\t]*\t\d*\t[^\t]*\t\d*\t[^\t]*\t\d*\t[^\t]*\t\d*$/', $firstline))
 		$inputType = 'MapCounties';
 	else {
-		echo "Unrecognized input format";
-		exit(1);
+		$inputType = '';
 	}
+	return $inputType;
+}
 
+function buildArray($inputType, $input) {
+	$foundCounties = [];
+	$missingCounties = [];
 	foreach($input as $line) {
 		if ($inputType == 'FTF' && preg_match("/^[\d\t-]*Germany [^\/]+ \/ ([^\t]+)\tGC/", $line, $out)) {
 			array_push($foundCounties, $out[1]);
@@ -80,6 +74,28 @@ function generate() {
 			}
 		}
 	}
+	return $foundCounties;
+}
+
+function generate() {
+	$basefolder = '';
+	$lk_js = json_decode(file_get_contents($basefolder.'landkreise_simplify200.geojson'), true);
+
+	$counties = [];
+	if (($fh = fopen($basefolder.'mapping.csv', "r")) !== FALSE) {
+		while(($data = fgetcsv($fh, 1000, "\t")) !== FALSE) {
+			$counties[$data[1].'_'.$data[2]] = $data[0];
+		}
+		fclose($fh);
+	}
+
+	$input = preg_split('/\r\n|[\r\n]/', $_POST['input']);
+	$inputType = identifySource($input[0]);
+	$foundCounties = buildArray($inputType, $input);
+
+	$input2 = preg_split('/\r\n|[\r\n]/', $_POST['input2']);
+	$input2Type = identifySource($input2[0]);
+	$specialCounties = buildArray($input2Type, $input2);
 
 	$newjsonArray = [
 			"type" => "FeatureCollection",
@@ -92,8 +108,7 @@ function generate() {
 			"features" => []
 	]; 
 
-	$found = [];
-	$notFound = [];
+	$out = [];
 
 	$features = $lk_js["features"];
 	foreach($features as $county) {
@@ -101,23 +116,27 @@ function generate() {
 			$ckey = $county["properties"]["GEN"].'_'.$county["properties"]["BEZ"];
 			if (array_key_exists($ckey, $counties)) {
 				$pgcname = $counties[$ckey];
-				if (in_array($pgcname, $foundCounties))
-					array_push($found, $county);
-				else
-					array_push($notFound, $county);
+				$color = $_POST['color_notfound'];
+				if (in_array($pgcname, $specialCounties)) {
+					$color = $_POST['color_special'];
+				} else if (in_array($pgcname, $foundCounties)) {
+					$color = $_POST['color_found'];
+				}
+				$county["properties"]['stroke-opacity'] = 0.6;
+				$county["properties"]['fill-opacity'] = 0.2;
+				$county["properties"]['fill'] = $color;
+				$county["properties"]['stroke'] = $color;
+				$county["properties"]['stroke-width'] = 2;
+				array_push($out, $county);
 			} else {
 				echo "Unmapped country: ".$ckey;
 			}
 		}
 	}
 
-	if ($_POST['type'] == 'found') {
-		$newjsonArray["features"] = $found;
-	} else {
-		$newjsonArray["features"] = $notFound;
-	}
+	$newjsonArray["features"] = $out;
 	header('Content-Type: application/geo+json');
-	header('Content-disposition: attachment; filename="stats_'.$inputType.'_'.$_POST['type'].'.geojson"');
+	header('Content-disposition: attachment; filename="stats_'.$input2Type.'.geojson"');
 	print(json_encode($newjsonArray));
 }
 ?>
